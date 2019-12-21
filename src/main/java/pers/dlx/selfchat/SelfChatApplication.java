@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("pers.dlx.selfchat.dao") // 此处填写 mapper接口所在包，如果不加则需要在每个 mapper上添加 @Mapper 注解。
 public class SelfChatApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SelfChatApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SelfChatApplication.class, args);
+    }
 
 }

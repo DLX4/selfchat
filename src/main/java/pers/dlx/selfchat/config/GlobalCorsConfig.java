@@ -7,21 +7,20 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 全局跨域拦截器
- * 
- * @author dinglingxiang
  *
+ * @author dinglingxiang
  */
 @Configuration
 public class GlobalCorsConfig {
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedMethods("POST, GET, PUT, OPTIONS, DELETE");
-				;
-			}
-		};
-	}
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedMethods("POST, GET, PUT, OPTIONS, DELETE");
+                ;
+            }
+        };
+    }
 }

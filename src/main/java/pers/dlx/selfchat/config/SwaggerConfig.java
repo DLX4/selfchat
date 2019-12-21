@@ -2,7 +2,6 @@ package pers.dlx.selfchat.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -10,9 +9,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
+ * @author 刘凯
  * @ClassName: swagger2配置
  * @Description: TODO
- * @author 刘凯
  * @date 2019年3月5日
  */
 
@@ -20,11 +19,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-	@Bean
-	public Docket createRestApi() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("pers.dlx.selfchat.controller")).paths(PathSelectors.any())
-				.build();
-	}
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2).select()
+                .apis(RequestHandlerSelectors.basePackage("pers.dlx.selfchat.controller")).paths(PathSelectors.any())
+                .build();
+    }
 
 }
