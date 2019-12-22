@@ -24,40 +24,7 @@ import javax.sql.DataSource;
 import java.lang.management.ManagementFactory;
 
 @Configuration
-public class SelfChatDataSourceConfig {
-
-    /**
-     * selfchat业务数据库-mysql
-     *
-     * @return
-     */
-    @Bean(name = "selfchatDataSource")
-    @Qualifier("selfchatDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.selfchat")
-    public DataSource selfchatDataSource() {
-        return DataSourceBuilder.create().build();
-    }
-
-
-    /**
-     * 配置mybatis mapper的扫描路径
-     *
-     * @return
-     * @throws Exception
-     */
-    @Bean
-    public SqlSessionFactory masterSqlSessionFactory() throws Exception {
-        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
-        factoryBean.setDataSource(selfchatDataSource());
-
-        // 配置mapper的扫描
-        Resource[] resources = new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml");
-        factoryBean.setMapperLocations(resources);
-
-        factoryBean.setVfs(SpringBootVFS.class); // Sets the SpringBootVFS class into SqlSessionFactoryBean
-        // ...
-        return factoryBean.getObject();
-    }
+public class EhcacheConfig {
 
     /**
      * ehcache配置
