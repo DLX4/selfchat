@@ -1,7 +1,7 @@
 package pers.dlx.selfchat.mapper;
 
-import pers.dlx.selfchat.entity.MessageMeta;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import pers.dlx.selfchat.entity.MessageMeta;
 
 /**
  * <p>

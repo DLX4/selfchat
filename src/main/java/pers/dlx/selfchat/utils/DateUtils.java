@@ -2,6 +2,10 @@ package pers.dlx.selfchat.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -333,5 +337,39 @@ public class DateUtils {
         calendar.setTime(date);
         calendar.set(Calendar.SECOND, seconds);
         return calendar.getTime();
+    }
+
+    /**
+     * Date转LocalDateTime
+     *
+     * @param date
+     * @return
+     */
+    public static LocalDateTime dateToLocalDateTime(Date date) {
+        try {
+            Instant instant = date.toInstant();
+            ZoneId zoneId = ZoneId.systemDefault();
+            return instant.atZone(zoneId).toLocalDateTime();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * LocalDateTime转Date
+     *
+     * @param localDateTime
+     * @return
+     */
+    public static Date localDateTimeToDate(LocalDateTime localDateTime) {
+        try {
+            ZoneId zoneId = ZoneId.systemDefault();
+            ZonedDateTime zdt = localDateTime.atZone(zoneId);
+            return Date.from(zdt.toInstant());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
