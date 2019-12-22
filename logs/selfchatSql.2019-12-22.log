@@ -1,0 +1,14 @@
+2019-12-22 20:29:49.955 [RMI TCP Connection(5)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 20:31:48.925 [RMI TCP Connection(7)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 23:01:36.272 [RMI TCP Connection(2)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 23:08:00.717 [RMI TCP Connection(8)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 23:10:56.768 [RMI TCP Connection(8)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 23:12:48.194 [RMI TCP Connection(8)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]
+2019-12-22 23:15:11.173 [RMI TCP Connection(8)-127.0.0.1] DEBUG org.springframework.jdbc.core.JdbcTemplate -
+                Executing SQL query [/* ping */ SELECT 1]

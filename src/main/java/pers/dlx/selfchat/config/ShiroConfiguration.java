@@ -76,12 +76,13 @@ public class ShiroConfiguration {
         map.put("/alogin", "anon");
         map.put("/login", "anon");
         map.put("/bypasslogin", "anon");
+        map.put("/swagger", "anon");
         map.put("/", "anon");
         map.put("/index", "anon");
         map.put("/favicon.ico", "anon");
         map.put("/8078fa298a7b78dabf7e938f185428ba/**", "anon");
         // 需要认证
-        map.put("/**", "user"); // 认证或记住我
+        map.put("/**", "anon"); // 认证或记住我
         // 登录
         shiroFilterFactoryBean.setLoginUrl("/login");
         // 首页

@@ -136,3 +136,89 @@
                 Started MybatisPlusTest in 5.298 seconds (JVM running for 6.194)
 2019-12-22 13:28:02.934 [Thread-5] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
                 Shutting down ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 20:29:45.121 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 6884 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 20:29:45.123 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 20:29:48.308 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 20:29:48.309 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 20:29:48.851 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 20:29:48.872 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.067 seconds (JVM running for 5.289)
+2019-12-22 20:30:57.992 [http-nio-8089-exec-4] INFO  pers.dlx.selfchat.listenner.SessionListener -
+                创建---sessionCreated----
+2019-12-22 20:31:44.553 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 11744 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 20:31:44.555 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 20:31:47.699 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 20:31:47.700 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 20:31:48.272 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 20:31:48.291 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.037 seconds (JVM running for 4.935)
+2019-12-22 23:01:31.844 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 17356 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 23:01:31.846 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 23:01:34.989 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 23:01:34.990 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 23:01:35.540 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 23:01:35.559 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.012 seconds (JVM running for 4.913)
+2019-12-22 23:07:56.413 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 8492 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 23:07:56.415 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 23:07:59.664 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 23:07:59.665 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 23:08:00.176 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 23:08:00.195 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.104 seconds (JVM running for 5.0)
+2019-12-22 23:10:51.996 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 12164 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 23:10:51.998 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 23:10:55.247 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 23:10:55.248 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 23:10:55.799 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 23:10:55.821 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.131 seconds (JVM running for 5.071)
+2019-12-22 23:12:43.040 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 23692 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 23:12:43.042 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 23:12:46.844 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 23:12:46.846 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 23:12:47.466 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 23:12:47.492 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.784 seconds (JVM running for 5.884)
+2019-12-22 23:15:06.366 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Starting SelfChatApplication on WIN10-812230011 with PID 16140 (D:\code\selfchat\target\classes started by Administrator in D:\code\selfchat)
+2019-12-22 23:15:06.369 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                No active profile set, falling back to default profiles: default
+2019-12-22 23:15:09.660 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService
+2019-12-22 23:15:09.661 [restartedMain] INFO  p.dlx.selfchat.task.VisiableThreadPoolTaskExecutor -
+                Initializing ExecutorService 'DEFAULT_EXECUTOR'
+2019-12-22 23:15:10.194 [restartedMain] INFO  pers.dlx.selfchat.listenner.MyApplicationListener -
+                ----
+2019-12-22 23:15:10.215 [restartedMain] INFO  pers.dlx.selfchat.SelfChatApplication -
+                Started SelfChatApplication in 4.181 seconds (JVM running for 5.071)

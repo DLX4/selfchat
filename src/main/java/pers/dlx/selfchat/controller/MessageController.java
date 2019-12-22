@@ -5,10 +5,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import pers.dlx.selfchat.entity.Message;
 import pers.dlx.selfchat.mapper.MessageMapper;
 import pers.dlx.selfchat.model.core.Response;
@@ -24,7 +21,7 @@ import java.util.Date;
  * 消息
  */
 
-@Controller
+@RestController
 @Api(tags = "消息相关接口")
 public class MessageController {
 
