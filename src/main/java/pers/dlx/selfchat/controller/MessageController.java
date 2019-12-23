@@ -1,21 +1,23 @@
 package pers.dlx.selfchat.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pers.dlx.selfchat.entity.Message;
 import pers.dlx.selfchat.mapper.MessageMapper;
 import pers.dlx.selfchat.model.core.Response;
-import pers.dlx.selfchat.model.request.MessageSaveInfo;
+import pers.dlx.selfchat.model.request.MessageReqVo;
+import pers.dlx.selfchat.model.response.MessageRspVo;
 import pers.dlx.selfchat.utils.BoolUtil;
 import pers.dlx.selfchat.utils.DateUtils;
 import pers.dlx.selfchat.utils.SnowflakeIdWorker;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 消息
@@ -36,7 +38,7 @@ public class MessageController {
      */
     @ApiOperation(value = "保存/修改消息信息", notes = "")
     @RequestMapping(value = "/message", method = RequestMethod.POST)
-    public Response saveMessage(@ApiParam(value = "消息信息", name = "info", required = true) @RequestBody MessageSaveInfo info) {
+    public Response saveMessage(@ApiParam(value = "消息信息", name = "info", required = true) @RequestBody MessageReqVo info) {
         // 插入一个新的消息
         Message message = new Message();
         message.setId(SnowflakeIdWorker.getNextId());
@@ -57,7 +59,10 @@ public class MessageController {
     @RequestMapping(value = "/message/{id}", method = RequestMethod.GET)
     public Response queryMessage(@PathVariable Long id) {
         Response response = new Response();
-        response.setContent(mapper.selectList(Wrappers.<Message>lambdaQuery().eq(Message::getIsDeleted, BoolUtil.FALSE_INT).eq(Message::getTopicId, id).orderByDesc(Message::getCreateTime)));
+        List<MessageRspVo> messages = Lists.newArrayList();
+        mapper.selectList(Wrappers.<Message>lambdaQuery().eq(Message::getIsDeleted, BoolUtil.FALSE_INT).eq(Message::getTopicId, id).orderByDesc(Message::getCreateTime))
+                .forEach(message -> messages.add(new MessageRspVo(message)));
+        response.setContent(messages);
         return response;
     }
 

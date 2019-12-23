@@ -3,7 +3,7 @@ package pers.dlx.selfchat.model.request;
 import lombok.Data;
 
 @Data
-public class TopicSaveInfo {
+public class TopicReqVo {
 
     /**
      * 主题名称

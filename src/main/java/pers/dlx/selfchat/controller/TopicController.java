@@ -1,21 +1,23 @@
 package pers.dlx.selfchat.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pers.dlx.selfchat.entity.Topic;
 import pers.dlx.selfchat.mapper.TopicMapper;
 import pers.dlx.selfchat.model.core.Response;
-import pers.dlx.selfchat.model.request.TopicSaveInfo;
+import pers.dlx.selfchat.model.request.TopicReqVo;
+import pers.dlx.selfchat.model.response.TopicRspVo;
 import pers.dlx.selfchat.utils.BoolUtil;
 import pers.dlx.selfchat.utils.DateUtils;
 import pers.dlx.selfchat.utils.SnowflakeIdWorker;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 主题
@@ -36,7 +38,7 @@ public class TopicController {
      */
     @ApiOperation(value = "保存/修改主题信息", notes = "")
     @RequestMapping(value = "/topic", method = RequestMethod.POST)
-    public Response saveTopic(@ApiParam(value = "主题信息", name = "info", required = true) @RequestBody TopicSaveInfo info) {
+    public Response saveTopic(@ApiParam(value = "主题信息", name = "info", required = true) @RequestBody TopicReqVo info) {
         Long topicId = info.getId();
         // 插入一个新的主题
         if (topicId == null) {
@@ -67,7 +69,12 @@ public class TopicController {
     @RequestMapping(value = "/topic", method = RequestMethod.GET)
     public Response queryTopic() {
         Response response = new Response();
-        response.setContent(mapper.selectList(Wrappers.<Topic>lambdaQuery().eq(Topic::getIsDeleted, BoolUtil.FALSE_INT).orderByDesc(Topic::getLastMsgTime)));
+        List<TopicRspVo> topicRspVos = Lists.newArrayList();
+        mapper.selectList(Wrappers.<Topic>lambdaQuery().eq(Topic::getIsDeleted, BoolUtil.FALSE_INT).orderByDesc(Topic::getLastMsgTime))
+                .forEach(topic -> {
+                    topicRspVos.add(new TopicRspVo(topic));
+                });
+        response.setContent(topicRspVos);
         return response;
     }
 

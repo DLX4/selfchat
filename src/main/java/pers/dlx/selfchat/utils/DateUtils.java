@@ -372,4 +372,16 @@ public class DateUtils {
         }
         return null;
     }
+
+    /**
+     * LocalDateTime 转 Unix时间
+     *
+     * @param localDateTime
+     * @return
+     */
+    public static long localDateTimeToUnixTime(LocalDateTime localDateTime) {
+        ZoneId zoneId = ZoneId.systemDefault();
+        return localDateTime.atZone(zoneId).toEpochSecond();
+    }
+
 }

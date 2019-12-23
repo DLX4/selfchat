@@ -2,8 +2,11 @@ package pers.dlx.selfchat.model.request;
 
 import lombok.Data;
 
+/**
+ * 消息（用户提交）
+ */
 @Data
-public class MessageSaveInfo {
+public class MessageReqVo {
 
 
     /**
