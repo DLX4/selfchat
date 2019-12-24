@@ -384,4 +384,18 @@ public class DateUtils {
         return localDateTime.atZone(zoneId).toEpochSecond();
     }
 
+    /**
+     * Unix时间转 LocalDateTime
+     *
+     * @param unixTime
+     * @return
+     */
+    public static LocalDateTime unixTimeToLocalDateTime(Long unixTime) {
+        if (unixTime == null) {
+            unixTime = 0L;
+        }
+        ZoneId zoneId = ZoneId.systemDefault();
+        return LocalDateTime.ofInstant(Instant.ofEpochSecond(unixTime), zoneId);
+    }
+
 }

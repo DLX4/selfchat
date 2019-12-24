@@ -1,6 +1,8 @@
 package pers.dlx.selfchat.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,12 +44,17 @@ public class MessageController {
         // 插入一个新的消息
         Message message = new Message();
         message.setId(SnowflakeIdWorker.getNextId());
+        message.setTopicId(info.getTopicId());
         message.setContent(info.getContent());
+        message.setType(info.getType());
         message.setCreateTime(DateUtils.dateToLocalDateTime(new Date()));
         message.setIsDeleted(BoolUtil.FALSE_INT);
         mapper.insert(message);
 
-        return new Response();
+        Response response = new Response();
+        response.setContent(new MessageRspVo(message));
+
+        return response;
     }
 
     /**
@@ -57,11 +64,19 @@ public class MessageController {
      */
     @ApiOperation(value = "查询全部消息信息", notes = "")
     @RequestMapping(value = "/message/{id}", method = RequestMethod.GET)
-    public Response queryMessage(@PathVariable Long id) {
+    public Response queryMessage(@PathVariable Long id,
+                                 @RequestParam(value = "firstCreateTime", required = false) Long firstCreateTime) {
         Response response = new Response();
+
+        Page<Message> page = new Page<>(1, 6);
+        IPage<Message> res = mapper.selectPage(page, Wrappers.<Message>lambdaQuery()
+                .eq(Message::getIsDeleted, BoolUtil.FALSE_INT)
+                .eq(Message::getTopicId, id)
+                .lt(firstCreateTime != null, Message::getCreateTime, DateUtils.unixTimeToLocalDateTime(firstCreateTime))
+                .orderByDesc(Message::getCreateTime));
+
         List<MessageRspVo> messages = Lists.newArrayList();
-        mapper.selectList(Wrappers.<Message>lambdaQuery().eq(Message::getIsDeleted, BoolUtil.FALSE_INT).eq(Message::getTopicId, id).orderByDesc(Message::getCreateTime))
-                .forEach(message -> messages.add(new MessageRspVo(message)));
+        res.getRecords().forEach(message -> messages.add(new MessageRspVo(message)));
         response.setContent(messages);
         return response;
     }
