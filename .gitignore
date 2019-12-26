@@ -15,3 +15,5 @@
 log/
 logs/
 target/
+# properties
+application.properties
