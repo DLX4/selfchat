@@ -7,9 +7,12 @@ import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pers.dlx.selfchat.entity.Message;
+import pers.dlx.selfchat.entity.Topic;
 import pers.dlx.selfchat.mapper.MessageMapper;
+import pers.dlx.selfchat.mapper.TopicMapper;
 import pers.dlx.selfchat.model.core.Response;
 import pers.dlx.selfchat.model.request.MessageReqVo;
 import pers.dlx.selfchat.model.response.MessageRspVo;
@@ -30,7 +33,10 @@ import java.util.List;
 public class MessageController {
 
     @Resource
-    private MessageMapper mapper;
+    private MessageMapper messageMapper;
+
+    @Resource
+    private TopicMapper topicMapper;
 
     /**
      * 保存/修改消息信息
@@ -49,7 +55,11 @@ public class MessageController {
         message.setType(info.getType());
         message.setCreateTime(DateUtils.dateToLocalDateTime(new Date()));
         message.setIsDeleted(BoolUtil.FALSE_INT);
-        mapper.insert(message);
+        messageMapper.insert(message);
+
+        Topic topic = topicMapper.selectById(info.getTopicId());
+        topic.setLastMsgTime(DateUtils.dateToLocalDateTime(new Date()));
+        topicMapper.updateById(topic);
 
         Response response = new Response();
         response.setContent(new MessageRspVo(message));
@@ -69,7 +79,7 @@ public class MessageController {
         Response response = new Response();
 
         Page<Message> page = new Page<>(1, 6);
-        IPage<Message> res = mapper.selectPage(page, Wrappers.<Message>lambdaQuery()
+        IPage<Message> res = messageMapper.selectPage(page, Wrappers.<Message>lambdaQuery()
                 .eq(Message::getIsDeleted, BoolUtil.FALSE_INT)
                 .eq(Message::getTopicId, id)
                 .lt(firstCreateTime != null, Message::getCreateTime, DateUtils.unixTimeToLocalDateTime(firstCreateTime))
@@ -90,7 +100,7 @@ public class MessageController {
     @ApiOperation(value = "删除消息信息", notes = "")
     @RequestMapping(value = "/message/{id}", method = RequestMethod.DELETE)
     public Response deleteMessage(@PathVariable Long id) {
-        mapper.deleteById(id);
+        messageMapper.deleteById(id);
         return new Response();
     }
 
